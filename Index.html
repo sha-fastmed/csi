@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Chosen Palette: Corporate Compliance (Blue, Green, Red, Yellow) -->
+    <!-- Application Structure Plan: The SPA is structured as a comprehensive executive briefing focused on CSI. It follows a logical narrative: 1. High-level KPIs for a quick overview. 2. The proposed solution, visualizing the balanced CSI state. 3. The structural solution (the Coordinator role), now with explicit responsibilities. 4. A clear visual breakdown of the new, distinct workflows for CSI units. 5. A summary of key benefits and actionable business opportunities. This structure is designed to persuasively guide stakeholders from problem to solution. -->
+    <!-- Visualization & Content Choices: Future State -> Goal: Compare -> Viz: Bar Chart (Chart.js) -> Justification: Uses green to illustrate the balanced, healthy target state for CSI units. Workflows -> Goal: Organize -> Viz: HTML/CSS Diagram -> Justification: Clearly differentiates the new processes without external libraries. Benefits/Proposals -> Goal: Organize -> Viz: Styled HTML Cards -> Justification: Cleanly presents key takeaways. CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <title>Infografía: Propuesta de Cumplimiento y Modelo Operativo para CSI</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+        }
+        .kpi-number {
+            font-weight: 900;
+            font-size: 6rem;
+            line-height: 1;
+            color: #002D62;
+        }
+        .flow-arrow {
+            font-size: 2.5rem;
+            color: #d1d5db;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-[#002D62] text-white text-center p-2 font-bold text-lg sticky top-0 z-10">
+        PROSALMED
+    </header>
+
+    <div class="container mx-auto p-4 md:p-8 max-w-7xl">
+
+        <div class="text-center my-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-[#002D62] mb-2">Propuesta Estratégica de Cumplimiento para Unidades CSI</h1>
+            <p class="text-xl text-gray-600">Optimización del Modelo de Salud Ocupacional según la LOPCYMAT</p>
+        </div>
+
+        <section class="text-center bg-white rounded-2xl shadow-lg p-8 mb-16">
+            <h2 class="text-2xl font-bold text-gray-500 mb-2">Total de Informes a Gestionar por CSI</h2>
+            <p class="kpi-number">82</p>
+            <p class="text-lg text-gray-600 mt-2">Volumen total de IVE y Morbilidad a gestionar bajo el nuevo modelo CSI.</p>
+        </section>
+        
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-[#002D62]">1. El Modelo Objetivo: Descentralización y Cumplimiento</h2>
+            <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-2">Proponemos un modelo proactivo donde cada unidad CSI opera como una célula autónoma, garantizando la correcta ejecución de las funciones del SSST.</p>
+        </div>
+
+        <section class="bg-white rounded-2xl shadow-lg p-6 md:p-8 mb-16">
+            <h3 class="text-2xl font-bold text-center mb-4">Distribución de Responsabilidades "Deber Ser"</h3>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">Cada unidad CSI gestionará su carga de trabajo de manera equilibrada.</p>
+            <div class="chart-container h-[400px]">
+                <canvas id="balancedChart"></canvas>
+            </div>
+        </section>
+
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-[#002D62]">2. La Solución Estructural: El Coordinador Médico</h2>
+             <p class="text-lg text-gray-600 max-w-3xl mx-auto mt-2">La designación de un Coordinador Médico por unidad CSI es la pieza clave para asegurar que cada célula ejecute el ciclo completo de vigilancia y gestión.</p>
+             <p class="text-lg text-gray-700 font-semibold max-w-3xl mx-auto mt-4 bg-yellow-100 p-4 rounded-lg border border-yellow-300">Cada CSI debe asignar un Coordinador Médico para descargar, elaborar recomendaciones de morbilidad y descargar, elaborar recomendaciones y firmar los IVE.</p>
+        </div>
+
+        <section class="bg-white rounded-2xl shadow-lg p-8 mb-16">
+             <h3 class="text-2xl font-bold text-center mb-8">3. Nuevo Flujo de Proceso por Unidad CSI</h3>
+             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="p-6 bg-gray-50 rounded-lg border">
+                    <h4 class="text-xl font-bold text-center text-gray-700 mb-4">Flujo de Morbilidad (CSI)</h4>
+                    <div class="flex flex-col space-y-4">
+                        <div class="flex items-center gap-4"><span class="text-3xl">📥</span><div><p class="font-semibold">1. Descargar</p><p class="text-sm text-gray-500">Obtención de la data.</p></div></div>
+                        <div class="flex items-center gap-4"><span class="text-3xl">🔬</span><div><p class="font-semibold">2. Analizar</p><p class="text-sm text-gray-500">Elaboración de informe.</p></div></div>
+                        <div class="flex items-center gap-4"><span class="text-3xl">📤</span><div><p class="font-semibold">3. Enviar</p><p class="text-sm text-gray-500">Entrega al cliente.</p></div></div>
+                    </div>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg border">
+                    <h4 class="text-xl font-bold text-center text-gray-700 mb-4">Flujo de IVE (CSI)</h4>
+                    <div class="flex flex-col space-y-4">
+                        <div class="flex items-center gap-4"><span class="text-3xl">📥</span><div><p class="font-semibold">1. Descargar</p><p class="text-sm text-gray-500">Obtención de la data.</p></div></div>
+                        <div class="flex items-center gap-4"><span class="text-3xl">🔬</span><div><p class="font-semibold">2. Analizar</p><p class="text-sm text-gray-500">Elaboración de IVE.</p></div></div>
+                        <div class="flex items-center gap-4"><span class="text-3xl">✍️</span><div><p class="font-semibold">3. Firmar</p><p class="text-sm text-gray-500">Validación profesional.</p></div></div>
+                        <div class="flex items-center gap-4"><span class="text-3xl">📤</span><div><p class="font-semibold">4. Enviar</p><p class="text-sm text-gray-500">Entrega al cliente.</p></div></div>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-center text-[#002D62] mb-8">4. Beneficios Clave del Nuevo Modelo</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md h-full"><p class="text-4xl mb-3">⚖️</p><h4 class="font-bold text-lg">Cumplimiento Legal</h4><p class="text-gray-600 text-sm">Alineación total con la LOPCYMAT, RLOPCYMAT y Normas Técnicas.</p></div>
+                <div class="bg-white p-6 rounded-lg shadow-md h-full"><p class="text-4xl mb-3">🚀</p><h4 class="font-bold text-lg">Eficiencia Operativa</h4><p class="text-gray-600 text-sm">Eliminación de cuellos de botella y reducción de tiempos de entrega.</p></div>
+                <div class="bg-white p-6 rounded-lg shadow-md h-full"><p class="text-4xl mb-3">🛡️</p><h4 class="font-bold text-lg">Servicio Proactivo</h4><p class="text-gray-600 text-sm">Gestión preventiva de la salud y asesoramiento técnico directo.</p></div>
+                <div class="bg-white p-6 rounded-lg shadow-md h-full"><p class="text-4xl mb-3">🧱</p><h4 class="font-bold text-lg">Estructura Robusta</h4><p class="text-gray-600 text-sm">Mitigación de riesgos por dependencia de personal y creación de un SSST escalable.</p></div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-3xl font-bold text-center text-[#002D62] mb-8">5. Propuesta y Oportunidades de Negocio</h2>
+            <div class="grid grid-cols-1 md:max-w-lg mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-lg border-l-4 border-yellow-400">
+                    <h4 class="font-bold text-lg mb-2">Servicio Adicional para Clientes CSI</h4>
+                    <p class="text-gray-700">Los clientes de los CSI que no tengan SHA, pero requieran visita para explicar los planes y las recomendaciones, pueden contratar 1 turno de SHA (médico ocupacional), si cuentan con SHA interno (Cliente).</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer class="bg-[#002D62] text-white text-center p-3 mt-12">
+        PROSALMED
+    </footer>
+
+    <script>
+        Chart.register(ChartDataLabels);
+
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) { return label.join(' '); }
+            return label;
+        };
+
+        const trafficLight = { red: '#EF4444', yellow: '#FBBF24', green: '#10B981', gray: '#d1d5db' };
+
+        new Chart(document.getElementById('balancedChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['CSI Capital', 'CSI Miranda'],
+                datasets: [
+                    { label: 'Morbilidad/IVE/Firma', data: [30, 52], backgroundColor: trafficLight.green }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { title: { display: true, text: 'Carga de Trabajo por Unidad' } }
+                },
+                plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback } } }
+            }
+        });
+    </script>
+</body>
+</html>
+
